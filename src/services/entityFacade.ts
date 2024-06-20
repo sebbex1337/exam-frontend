@@ -11,6 +11,19 @@ export interface Deltager {
     resultater: Resultat[];
 }
 
+export interface DeltagerDTO {
+    id: number;
+    navn: string;
+    fødselsdato: string;
+    aldersgruppe: string;
+    køn: Køn;
+    email: string;
+    klub: string;
+    landKode: string;
+    disciplinIds: number[];
+    resultatIds: number[];
+}
+
 export interface Disciplin {
     id: number;
     navn: string;
@@ -21,6 +34,14 @@ export interface Resultat {
     id: number;
     dato: string;
     disciplinNavn: string;
+    resultat: number;
+}
+
+export interface ResultatDTO {
+    id: number;
+    dato: string;
+    deltagerId: number;
+    disciplinId: number;
     resultat: number;
 }
 

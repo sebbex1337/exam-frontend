@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import DeltagerPage from "./pages/DeltagerPage";
 import DeltagerDetailViewPage from "./pages/DeltagerDetailViewPage";
 import AddDeltagerPage from "./pages/AddDeltagerPage";
+import AddResultatPage from "./pages/AddResultatPage";
 
 export default function App() {
     return (
@@ -11,9 +12,9 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<DeltagerPage />} />
                 <Route path="/discipliner" element={<h1>Med dig</h1>} />
-                <Route path="/test" element={<h1>Test</h1>} />
                 <Route path="/addDeltager" element={<AddDeltagerPage />} />
                 <Route path="/deltager/:id" element={<DeltagerDetailViewPage />} />
+                <Route path="/addResultat" element={<AddResultatPage />} />
             </Routes>
         </div>
     );

@@ -34,9 +34,5 @@ export function formatDato(datoTid: string): string {
     const dag = dato.getDate().toString().padStart(2, "0");
     const måned = (dato.getMonth() + 1).toString().padStart(2, "0");
     const år = dato.getFullYear();
-    const timer = dato.getHours().toString().padStart(2, "0");
-    const minutter = dato.getMinutes().toString().padStart(2, "0");
-    const sekunder = dato.getSeconds().toString().padStart(2, "0");
-
-    return `${dag}-${måned}-${år} ${timer}:${minutter}:${sekunder}`;
+    return `${dag}-${måned}-${år}`;
 }
