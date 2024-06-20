@@ -42,6 +42,18 @@ export default function NavBar() {
                                 Tilføj deltager
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/addDisciplin"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "block py-2 px-3 md:p-0 bg-blue-700 rounded md:bg-transparent text-blue-500"
+                                        : "block py-2 px-3 md:p-0 rounded md:hover:bg-transparent md:hover:text-blue-500 text-white hover:bg-gray-700 hover:text-white border-gray-700"
+                                }
+                            >
+                                Tilføj Disciplin
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>

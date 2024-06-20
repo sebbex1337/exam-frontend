@@ -27,7 +27,9 @@ export default function DeltagerTable({ deltagere }: props) {
                     {deltagere.map((deltager) => (
                         <tr key={deltager.id} className="odd:bg-white even:bg-gray-50 border-b">
                             <td className="px-6 py-4">
-                                <ReactCountryFlag countryCode={deltager.landKode} />
+                                <div className="text-4xl">
+                                    <ReactCountryFlag svg countryCode={deltager.landKode} />
+                                </div>
                             </td>
                             <td className="px-6 py-4">{deltager.navn}</td>
                             <td className="px-6 py-4">{calculateAge(deltager.fødselsdato)}</td>

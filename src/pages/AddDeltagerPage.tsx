@@ -1,10 +1,8 @@
 import DeltagerForm from "../components/DeltagerForm";
 
 export default function AddDeltagerPage() {
-
     return (
-        <div>
-            <h1>Tilføj deltager</h1>
+        <div className="pt-4">
             <DeltagerForm />
         </div>
     );

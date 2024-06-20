@@ -135,11 +135,11 @@ export default function DeltagerForm() {
                 </select>
             </div>
             <div className="flex justify-between">
-                <button type="submit" className="mt-5 px-4 py-2 bg-blue-500 text-white rounded-lg">
+                <button type="submit" className="mt-5 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg">
                     Gem Deltager
                 </button>
                 {deltager && (
-                    <button type="button" onClick={handleDelete} className="mt-5 px-4 py-2 bg-red-500 text-white rounded-lg ml-2">
+                    <button type="button" onClick={handleDelete} className="mt-5 px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-lg ml-2">
                         Slet Deltager
                     </button>
                 )}

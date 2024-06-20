@@ -3,7 +3,7 @@ import { Deltager, Resultat, ResultatDTO } from "../services/entityFacade";
 import ReactCountryFlag from "react-country-flag";
 import { calculateAge, formatResultat, formatDato } from "../services/helperUtils";
 import React, { useState } from "react";
-import { opdaterResultat } from "../services/apiFacade";
+import { opdaterResultat, sletResultat } from "../services/apiFacade";
 
 type ResultaterPerDisciplin = {
     [disciplinNavn: string]: Resultat[];
@@ -60,6 +60,20 @@ export default function DeltagerDetailViewPage() {
         setDeltager(updatedDeltager);
     }
 
+    async function handleDeleteResultat(resultatId: number) {
+        if (resultatId) {
+            if (confirm("Er du sikker på at du vil slette denne disciplin?")) {
+                const res = await sletResultat(resultatId);
+                if (res.ok) {
+                    setEditingResultatId(null);
+                    const updatedResultater = deltager.resultater.filter((resultat) => resultat.id !== resultatId);
+                    const updatedDeltager = { ...deltager, resultater: updatedResultater };
+                    setDeltager(updatedDeltager);
+                }
+            }
+        }
+    }
+
     return (
         <div className="h-screen w-full px-48 pt-8 text-center">
             <Link to="/addDeltager" state={deltager} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -67,7 +81,10 @@ export default function DeltagerDetailViewPage() {
             </Link>
             <h1 className="text-center text-4xl py-4">{deltager.navn}</h1>
             <p>
-                Nationalitet: {deltager.landKode} <ReactCountryFlag countryCode={deltager.landKode} />
+                Nationalitet: {deltager.landKode}{" "}
+                <span className="text-xl">
+                    <ReactCountryFlag svg countryCode={deltager.landKode} />
+                </span>
             </p>
             <p>Født: {deltager.fødselsdato}</p>
             <p>Alder: {calculateAge(deltager.fødselsdato)} år</p>
@@ -109,8 +126,13 @@ export default function DeltagerDetailViewPage() {
                                                         <td className="border px-6 py-4">
                                                             <input type="text" value={editValues.resultat} onChange={(e) => handleInputChange(e, "resultat")} />
                                                         </td>
-                                                        <td className="border px-6 py-4">
-                                                            <button onClick={() => handleSaveResultat(resultat.id, resultat.disciplinNavn)}>Gem</button>
+                                                        <td className="border px-4 py-2">
+                                                            <button onClick={() => handleSaveResultat(resultat.id, resultat.disciplinNavn)} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
+                                                                Gem
+                                                            </button>
+                                                            <button onClick={() => handleDeleteResultat(resultat.id)} className="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-lg ml-2">
+                                                                Slet
+                                                            </button>
                                                         </td>
                                                     </>
                                                 ) : (

@@ -4,6 +4,9 @@ import DeltagerPage from "./pages/DeltagerPage";
 import DeltagerDetailViewPage from "./pages/DeltagerDetailViewPage";
 import AddDeltagerPage from "./pages/AddDeltagerPage";
 import AddResultatPage from "./pages/AddResultatPage";
+import DisciplinPage from "./pages/DisciplinPage";
+import AddDisciplinPage from "./pages/AddDisciplinPage";
+import DisciplinDetailViewPage from "./pages/DisciplinDetailViewPage";
 
 export default function App() {
     return (
@@ -11,10 +14,12 @@ export default function App() {
             <NavBar />
             <Routes>
                 <Route path="/" element={<DeltagerPage />} />
-                <Route path="/discipliner" element={<h1>Med dig</h1>} />
+                <Route path="/discipliner" element={<DisciplinPage />} />
                 <Route path="/addDeltager" element={<AddDeltagerPage />} />
-                <Route path="/deltager/:id" element={<DeltagerDetailViewPage />} />
                 <Route path="/addResultat" element={<AddResultatPage />} />
+                <Route path="/addDisciplin" element={<AddDisciplinPage />} />
+                <Route path="/deltager/:id" element={<DeltagerDetailViewPage />} />
+                <Route path="/disciplin/:id" element={<DisciplinDetailViewPage />} />
             </Routes>
         </div>
     );
