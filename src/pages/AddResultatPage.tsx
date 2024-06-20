@@ -1,12 +1,13 @@
 import { useLocation } from "react-router-dom";
 import { Deltager } from "../services/entityFacade";
+import ResultatForm from "../components/ResultatForm";
 
 export default function AddResultatPage() {
     const deltager = useLocation().state as Deltager;
-    console.log(deltager);
+    
     return (
-        <div>
-            <h1>Tilføj resultat</h1>
+        <div className="pt-8">
+            <ResultatForm deltager={deltager} />
         </div>
     );
 }

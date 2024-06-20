@@ -33,6 +33,11 @@ export async function søgDeltager(navn: string) {
 // --------------------------------------------------------------------------------
 
 // Resultat funktioner
+export async function opretResultat(resultatDTO: ResultatDTO) {
+    const options = makeOptions("POST", resultatDTO);
+    return await fetch(RESULTAT_URL, options).then(handleHttpErrors);
+}
+
 export async function opdaterResultat(resultatDTO: ResultatDTO) {
     const options = makeOptions("PUT", resultatDTO);
     return await fetch(`${RESULTAT_URL}/${resultatDTO.id}`, options).then(handleHttpErrors);

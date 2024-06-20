@@ -7,6 +7,7 @@ import AddResultatPage from "./pages/AddResultatPage";
 import DisciplinPage from "./pages/DisciplinPage";
 import AddDisciplinPage from "./pages/AddDisciplinPage";
 import DisciplinDetailViewPage from "./pages/DisciplinDetailViewPage";
+import MangeResultaterForm from "./components/MangeResultaterForm";
 
 export default function App() {
     return (
@@ -18,6 +19,7 @@ export default function App() {
                 <Route path="/addDeltager" element={<AddDeltagerPage />} />
                 <Route path="/addResultat" element={<AddResultatPage />} />
                 <Route path="/addDisciplin" element={<AddDisciplinPage />} />
+                <Route path="/addMangeResultater" element={<MangeResultaterForm />} />
                 <Route path="/deltager/:id" element={<DeltagerDetailViewPage />} />
                 <Route path="/disciplin/:id" element={<DisciplinDetailViewPage />} />
             </Routes>
