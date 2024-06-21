@@ -35,7 +35,6 @@ export default function MangeResultaterForm() {
                 resultat: resultater[deltagerId],
                 dato: new Date().toISOString().split("T")[0], // Dagens dato
             };
-            console.log(resultat);
             await opretResultat(resultat);
         }
         navigate("/");

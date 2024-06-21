@@ -39,8 +39,6 @@ export default function DeltagerDetailViewPage() {
     }
 
     async function handleSaveResultat(resultatId: number, disciplinNavn: string) {
-        console.log("Gemmer resultat", editValues);
-        console.log(resultatId);
         await opdaterResultat(editValues);
         setEditingResultatId(null);
 

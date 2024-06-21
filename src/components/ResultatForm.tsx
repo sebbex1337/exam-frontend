@@ -30,7 +30,6 @@ export default function ResultatForm({ deltager }: props) {
     }, [deltager]);
 
     function handleSelectChange(e: React.ChangeEvent<HTMLSelectElement>) {
-        console.log(e.target.value);
         setFormData({
             ...formData,
             [e.target.name]: Number(e.target.value),
@@ -39,7 +38,6 @@ export default function ResultatForm({ deltager }: props) {
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log(formData);
         await opretResultat(formData);
         navigate("/");
     }
