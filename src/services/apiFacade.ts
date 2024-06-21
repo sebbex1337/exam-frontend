@@ -33,6 +33,10 @@ export async function søgDeltager(navn: string) {
 // --------------------------------------------------------------------------------
 
 // Resultat funktioner
+export async function hentResultaterUdFraDisciplinId(disciplinId: number) {
+    return await fetch(`${RESULTAT_URL}/disciplin/${disciplinId}/deltagere`).then(handleHttpErrors);
+}
+
 export async function opretResultat(resultatDTO: ResultatDTO) {
     const options = makeOptions("POST", resultatDTO);
     return await fetch(RESULTAT_URL, options).then(handleHttpErrors);

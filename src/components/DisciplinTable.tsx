@@ -8,12 +8,12 @@ interface props {
 export default function DisciplinTable({ discipliner }: props) {
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
+            <table className="w-full text-sm text-center text-gray-700 ">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-200 ">
                     <tr>
-                        <th className="px-6 py-3 w-[40%]">Navn</th>
-                        <th className="px-6 py-3 w-[40%]">Restultat Type</th>
-                        <th className="px-6 py-3 w-[20%] text-center">Action</th>
+                        <th className="px-6 py-3 w-[35%]">Navn</th>
+                        <th className="px-6 py-3 w-[35%]">Restultat Type</th>
+                        <th className="px-6 py-3 w-[30%] text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody>

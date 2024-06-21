@@ -45,6 +45,14 @@ export interface ResultatDTO {
     resultat: number;
 }
 
+export interface ResultatGETDTO {
+    id: number;
+    dato: string;
+    disciplinNavn: string;
+    resultat: number;
+    deltager: Deltager;
+}
+
 export enum ResultatType {
     TID = "TID",
     AFSTAND = "AFSTAND",

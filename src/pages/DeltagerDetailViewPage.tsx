@@ -90,7 +90,7 @@ export default function DeltagerDetailViewPage() {
             <p>Alder: {calculateAge(deltager.fødselsdato)} år</p>
             <p>Aldersgruppe: {deltager.aldersgruppe}</p>
             <p>
-                Email:
+                Email:{" "}
                 <a className="text-blue-700" href={`mailto:${deltager.email}`}>
                     {deltager.email}
                 </a>
@@ -104,11 +104,11 @@ export default function DeltagerDetailViewPage() {
                 </Link>
                 <div className={`grid grid-cols-${deltager.discipliner.length > 1 ? "2" : "1"} gap-4`}>
                     {deltager.discipliner.map((disciplin) => (
-                        <div key={disciplin.id} className="mb-8 shadow-md">
+                        <div key={disciplin.id} className="mb-8 ">
                             <h3 className="text-xl font-bold mb-2">{disciplin.navn}</h3>
                             {resultaterPerDisciplin[disciplin.navn] && resultaterPerDisciplin[disciplin.navn].length > 0 ? (
-                                <table className="table-auto w-full text-m text-center text-gray-900">
-                                    <thead className="text-m text-gray-900 uppercase bg-gray-50">
+                                <table className="table-auto w-full text-m text-center text-gray-900 shadow-md">
+                                    <thead className="text-m text-gray-900 uppercase bg-gray-200">
                                         <tr>
                                             <th className="px-6 py-3">Dato</th>
                                             <th className="px-6 py-3">Resultat</th>
